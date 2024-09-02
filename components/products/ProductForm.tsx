@@ -156,7 +156,7 @@ const ProductForm: React.FC<ProductFormProps> = ({ initialData }) => {
               </FormItem>
             )}
           />
-          <FormField
+           <FormField
             control={form.control}
             name="media"
             render={({ field }) => (
@@ -166,14 +166,10 @@ const ProductForm: React.FC<ProductFormProps> = ({ initialData }) => {
                   <ImageUpload
                     value={field.value}
                     onChange={(url) => field.onChange([...field.value, url])}
-                    onRemove={(url) =>
-                      field.onChange([
-                        ...field.value.filter((image) => image !== url),
-                      ])
-                    }
+                    onRemove={(url) => field.onChange([...field.value.filter((image) => image !== url)])}
                   />
                 </FormControl>
-                <FormMessage className="text-red-1" />
+                <FormMessage />
               </FormItem>
             )}
           />
